@@ -1,1 +1,1 @@
-export { default } from './textWithIllustration';
+export { default } from './TextWithIllustration';

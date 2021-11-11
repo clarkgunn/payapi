@@ -1,7 +1,8 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 export default function Socials() {
   return (
     <section className="cluster">
-      <a href="#">
+      <a href="/">
         <svg
           className="social facebook"
           width="20"
@@ -14,7 +15,7 @@ export default function Socials() {
           />
         </svg>
       </a>
-      <a href="#">
+      <a href="/">
         <svg
           className="social instagram"
           width="20"
@@ -27,7 +28,7 @@ export default function Socials() {
           />
         </svg>
       </a>
-      <a href="#">
+      <a href="/">
         <svg
           className="social twitter"
           width="20"
@@ -40,7 +41,7 @@ export default function Socials() {
           />
         </svg>
       </a>
-      <a href="#">
+      <a href="/">
         <svg
           className="social pinterest"
           width="20"

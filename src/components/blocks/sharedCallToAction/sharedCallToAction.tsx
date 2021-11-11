@@ -1,7 +1,7 @@
 import './sharedCallToAction.module.css';
 import { gql } from '@apollo/client';
 
-export interface SharedCallToActionProps {
+interface Props {
   heading: string;
   link: {
     text: string;
@@ -9,7 +9,7 @@ export interface SharedCallToActionProps {
   };
 }
 
-export function SharedCallToAction({ heading, link }: SharedCallToActionProps) {
+export function SharedCallToAction({ heading, link }: Props) {
   return (
     <section className="cta">
       <h2>{heading}</h2>

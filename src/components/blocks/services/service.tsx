@@ -1,7 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
 import { gql } from '@apollo/client';
 
-export default function Service({ heading, subheading, icon }) {
+export interface IService {
+  heading: string;
+  subheading: string;
+  icon: {
+    asset: {
+      url: string;
+      alt: string;
+    };
+  };
+  _key: string;
+}
+
+export default function Service({ heading, subheading, icon }: IService) {
   return (
     <li>
       <section>

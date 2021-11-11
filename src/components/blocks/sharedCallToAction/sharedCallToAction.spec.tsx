@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import SharedCallToAction from './sharedCallToAction';
+import SharedCallToAction from './SharedCallToAction';
 
 describe('SharedCallToAction', () => {
   it('should render successfully', () => {

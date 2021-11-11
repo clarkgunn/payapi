@@ -1,13 +1,13 @@
 import styles from './header.module.css';
 import { gql } from '@apollo/client';
-import Logo from 'components/logo';
-import MobileNav from 'components/mobileNav';
 import Image from 'next/image';
+import Logo from '@/components/Logo';
+import MobileNav from '@/components/MobileNav';
 import Link from 'next/link';
-import Nav from 'components/nav';
+import Nav, { INav } from '@/components/Nav';
 
 export interface HeaderProps {
-  nav: Array<any>;
+  nav: INav;
   inverted: boolean;
 }
 
@@ -16,7 +16,7 @@ export function Header({ nav = [], inverted = false }: HeaderProps) {
     <header
       className={`cluster ${styles.header} ${inverted ? 'inverted' : ''}`}
     >
-      <Link href="#">
+      <Link href="/">
         <a className="logo-link" aria-label="Sunnyside logo">
           <Logo height="30" width="170" />
         </a>

@@ -1,6 +1,16 @@
-import PropTypes from 'prop-types';
+interface Link {
+  _key: string;
+  text: string;
+  url: string;
+}
 
-export default function Nav({ nav }) {
+export type INav = Array<Link>;
+
+interface Props {
+  nav: INav;
+}
+
+export default function Nav({ nav }: Props) {
   return (
     <nav className="cluster">
       {nav.map((link) => (
@@ -11,13 +21,3 @@ export default function Nav({ nav }) {
     </nav>
   );
 }
-
-Nav.propTypes = {
-  nav: PropTypes.arrayOf(
-    PropTypes.shape({
-      _key: PropTypes.string,
-      text: PropTypes.string,
-      url: PropTypes.string,
-    })
-  ).isRequired,
-};

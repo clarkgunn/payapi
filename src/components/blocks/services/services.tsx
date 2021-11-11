@@ -1,7 +1,12 @@
 import { gql } from '@apollo/client';
-import Service from './service';
+import Service, { IService } from './Service';
 
-export default function Services({ heading, services }) {
+interface Props {
+  heading: string;
+  services: IService[];
+}
+
+export default function Services({ heading, services }: Props) {
   return (
     <section className="services">
       <hr />

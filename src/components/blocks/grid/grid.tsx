@@ -1,9 +1,14 @@
+import { Component } from 'react';
 import { gql } from '@apollo/client';
-import { getCardMap } from 'utils';
-import BlockBuilder from 'components/blockBuilder';
-import { ImageCard, ImageTextCard, TextCard } from 'components/cards';
+import { getCardMap } from '@/utils';
+import BlockBuilder from '@/components/BlockBuilder';
+import { ImageCard, ImageTextCard, TextCard } from '@/components/Cards';
 
-export default function Grid({ cards }) {
+interface Props {
+  cards: [{ __typename: string; _key: string; [rest: string]: unknown }];
+}
+
+export default function Grid({ cards }: Props) {
   const cardMap = getCardMap();
 
   return (

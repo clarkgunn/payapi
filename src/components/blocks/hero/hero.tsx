@@ -4,12 +4,36 @@ import gql from 'graphql-tag';
 import Image from 'next/image';
 import Script from 'next/script';
 import { useContext } from 'react';
-import HeaderContext from 'components/header/headerContext';
-import { Header } from 'components/header';
-import { image } from 'utils/graphql/fragments';
-import { getImageUrl } from 'utils/image';
+import HeaderContext from '@/components/Header/HeaderContext';
+import { Header, HeaderProps } from '@/components/Header';
+import { image } from '@/graphql/fragments';
+import { getImageUrl } from '@/utils/image';
 
-export default function Hero({ headline, image }) {
+interface FullHeightHeroHeaderProps {
+  isFullHeight: boolean;
+  headerProps: HeaderProps;
+}
+
+function FullHeightHeroHeader({
+  isFullHeight,
+  headerProps,
+}: FullHeightHeroHeaderProps) {
+  return isFullHeight ? (
+    <>
+      <Script src="/scripts/resize.js" strategy="beforeInteractive" />
+      <Header {...headerProps} inverted />
+    </>
+  ) : null;
+}
+
+interface Props {
+  headline: string;
+  image: {
+    public_id: string;
+  };
+}
+
+export default function Hero({ headline, image }: Props) {
   const headerProps = useContext(HeaderContext);
   const fullHeightHero = !!headerProps;
   const imageSrc = getImageUrl(image.public_id);
@@ -39,15 +63,6 @@ export default function Hero({ headline, image }) {
       </div>
     </section>
   );
-}
-
-function FullHeightHeroHeader({ isFullHeight, headerProps }) {
-  return isFullHeight ? (
-    <>
-      <Script src="/scripts/resize.js" strategy="beforeInteractive" />
-      <Header {...headerProps} inverted />
-    </>
-  ) : null;
 }
 
 Hero.fragment = gql`

@@ -1,8 +1,16 @@
 import { gql } from '@apollo/client';
 import Image from 'next/image';
-import { image } from 'utils/graphql/fragments';
+import { image } from '@/graphql/fragments';
 
-export default function ImageTextCard({ heading, content, image }) {
+interface Props {
+  heading: string;
+  content: string;
+  image: {
+    public_id: string;
+  };
+}
+
+export default function ImageTextCard({ heading, content, image }: Props) {
   return (
     <Image
       src={image.public_id}

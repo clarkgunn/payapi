@@ -1,5 +1,5 @@
 import { createContext } from 'react';
 
-const HeaderContext = createContext(null);
+const HeaderContext = createContext({ nav: [], inverted: false });
 
 export default HeaderContext;

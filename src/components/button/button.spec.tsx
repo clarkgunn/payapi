@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import Button from './button';
+import Button from './Button';
 
 describe('Button', () => {
   it('should render successfully.', () => {
@@ -26,7 +26,7 @@ describe('Button', () => {
         <Button secondary dark>
           {secondaryDark}
         </Button>
-      </section>
+      </section>,
     );
 
     const primaryButton = screen.getByText(primary);

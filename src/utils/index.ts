@@ -1,18 +1,16 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { gql } from '@apollo/client';
-import 'cross-fetch/polyfill';
-
-import { Header } from 'components/header';
-import { Footer } from 'components/footer';
-import Hero from 'components/blocks/hero';
-import Services from 'components/blocks/services';
-import TextWithIllustration from 'components/blocks/textWithIllustration';
-import CallToAction from 'components/blocks/callToAction';
-import Grid from 'components/blocks/grid';
-import { SharedCallToAction } from 'components/blocks/sharedCallToAction';
-import Testimonials from 'components/blocks/testimonials';
-import Gallery from 'components/blocks/gallery';
-import { ImageCard, TextCard, ImageTextCard } from 'components/cards';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import Hero from '@/components/blocks/Hero';
+import Services from '@/components/blocks/Services';
+import TextWithIllustration from '@/components/blocks/TextWithIllustration';
+import CallToAction from '@/components/blocks/CallToAction';
+import Grid from '@/components/blocks/Grid';
+import SharedCallToAction from '@/components/blocks/SharedCallToAction';
+import Testimonials from '@/components/blocks/Testimonials';
+import Gallery from '@/components/blocks/Gallery';
+import { ImageCard, TextCard, ImageTextCard } from '@/components/Cards';
 
 export const client = new ApolloClient({
   uri: process.env.REACT_APP_API_URL,
@@ -29,7 +27,11 @@ export const client = new ApolloClient({
   },
 });
 
-export function getPageBlockMap() {
+interface ComponentMap {
+  [index: string]: any;
+}
+
+export function getPageBlockMap(): ComponentMap {
   return {
     Hero,
     // Services,
@@ -42,7 +44,7 @@ export function getPageBlockMap() {
   };
 }
 
-export function getCardMap() {
+export function getCardMap(): ComponentMap {
   return {
     ImageCard,
     TextCard,
@@ -73,7 +75,7 @@ export async function getNavigation() {
   };
 }
 
-export async function getPropsForSlug(slug) {
+export async function getPropsForSlug(slug: string) {
   const GET_DATA = gql`
     query getPageBySlug($slug: String!) {
       allPage(where: { slug: { current: { eq: $slug } } }) {
@@ -139,7 +141,7 @@ export async function getPaths() {
   if (errors) {
     console.error(errors);
   } else {
-    return data.allPage.map(({ slug }) => {
+    return data.allPage.map(({ slug }: { slug: { current: string } }) => {
       return {
         params: { slug: slug.current },
       };
@@ -147,10 +149,13 @@ export async function getPaths() {
   }
 }
 
-export function popBlockByTypename(typename, blocks) {
+export function popBlockByTypename(
+  typename: string,
+  blocks: [{ __typename: string }],
+) {
   const [block] = blocks.splice(
     blocks.findIndex((block) => block.__typename === typename),
-    1
+    1,
   );
 
   return block;

@@ -1,7 +1,11 @@
 import { getPageBlockMap, getPropsForSlug } from '@/utils';
-import BlockBuilder from '@/components/blockBuilder';
+import BlockBuilder from '@/components/BlockBuilder';
 
-export default function Home({ pageBlocks }) {
+interface Props {
+  pageBlocks: [{ __typename: string; _key: string; [rest: string]: unknown }];
+}
+
+export default function Home({ pageBlocks }: Props) {
   const blockMap = getPageBlockMap();
 
   return (

@@ -1,1 +1,1 @@
-export { default } from './blockBuilder';
+export { default } from './BlockBuilder';

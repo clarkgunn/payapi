@@ -1,14 +1,14 @@
 import './emailForm.module.css';
-import { Form } from '@/components/form';
-import Button from '../button';
+import Form from '@/components/Form';
+import Button from '@/components/Button';
 
-export interface EmailFormProps {
+export interface Props {
   buttonText: string;
   label: string;
   onSubmit: (...args: any) => any;
 }
 
-export function EmailForm({ buttonText, label, onSubmit }: EmailFormProps) {
+export function EmailForm({ buttonText, label, onSubmit }: Props) {
   return (
     <Form onSubmit={onSubmit}>
       <>

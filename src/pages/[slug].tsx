@@ -1,8 +1,11 @@
-import PropTypes from 'prop-types';
 import { getPageBlockMap, getPaths, getPropsForSlug } from '@/utils';
-import BlockBuilder from '@/components/blockBuilder';
+import BlockBuilder from '@/components/BlockBuilder';
 
-export default function Page({ pageBlocks }) {
+interface Props {
+  pageBlocks: [{ __typename: string; _key: string; [rest: string]: unknown }];
+}
+
+export default function Page({ pageBlocks }: Props) {
   const blockMap = getPageBlockMap();
 
   return (
@@ -12,7 +15,7 @@ export default function Page({ pageBlocks }) {
   );
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: { params: { slug: string } }) {
   const pageProps = await getPropsForSlug(params.slug);
 
   return {
@@ -30,7 +33,3 @@ export async function getStaticPaths() {
     fallback: false,
   };
 }
-
-Page.propTypes = {
-  pageBlocks: PropTypes.arrayOf(PropTypes.object).isRequired,
-};

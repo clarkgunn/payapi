@@ -1,7 +1,12 @@
 import { gql } from '@apollo/client';
-import Testimonial from './testimonial';
+import Testimonial, { ITestimonial } from './Testimonial';
 
-export default function Testimonials({ heading, testimonials }) {
+interface Props {
+  heading: string;
+  testimonials: ITestimonial[];
+}
+
+export default function Testimonials({ heading, testimonials }: Props) {
   return (
     <section className="testimonials">
       <h2>{heading}</h2>

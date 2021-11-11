@@ -1,8 +1,25 @@
 /* eslint-disable @next/next/no-img-element */
 import { gql } from '@apollo/client';
-import { image } from 'utils/graphql/fragments';
+import { image } from '@/graphql/fragments';
 
-export default function Testimonial({ name, position, quote, image }) {
+export interface ITestimonial {
+  name: string;
+  position: string;
+  quote: string;
+  image: {
+    asset?: {
+      url?: string;
+    };
+  };
+  _key: string;
+}
+
+export default function Testimonial({
+  name,
+  position,
+  quote,
+  image,
+}: ITestimonial) {
   return (
     <article className="testimonial">
       <div className="top">

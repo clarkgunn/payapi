@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
-import EmailForm from './emailForm';
+import EmailForm from './EmailForm';
 
 describe('Email', () => {
   it('should have no accessibility violations.', async () => {

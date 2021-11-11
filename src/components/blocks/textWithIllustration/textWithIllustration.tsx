@@ -1,13 +1,22 @@
 import { gql } from '@apollo/client';
 import Image from 'next/image';
-import { image } from 'utils/graphql/fragments';
+import { image } from '@/graphql/fragments';
+
+interface Props {
+  heading: string;
+  subheading: string;
+  excerpt: string;
+  image: {
+    public_id: string;
+  };
+}
 
 export default function TextWithIllustration({
   heading,
   subheading,
   excerpt,
   image,
-}) {
+}: Props) {
   return (
     <section>
       <div>

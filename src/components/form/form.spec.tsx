@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import Form from './form';
+import Form from './Form';
 
 describe('Form', () => {
   it('should render successfully', async () => {
@@ -12,7 +12,7 @@ describe('Form', () => {
           Foobar
           <input type="email" name="email" />
         </label>
-      </Form>
+      </Form>,
     );
     const results = await axe(container);
 
@@ -30,7 +30,7 @@ describe('Form', () => {
           </label>
           <button type="submit">submit</button>
         </>
-      </Form>
+      </Form>,
     );
 
     const email = 'foobar@example.com';
@@ -43,7 +43,7 @@ describe('Form', () => {
     expect(onSubmit).toHaveBeenCalledWith(
       expect.objectContaining({
         email,
-      })
+      }),
     );
   });
 });

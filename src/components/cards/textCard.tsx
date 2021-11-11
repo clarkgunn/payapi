@@ -1,7 +1,16 @@
-import { gql } from "@apollo/client";
-import Link from "next/link";
+import { gql } from '@apollo/client';
+import Link from 'next/link';
 
-export default function TextCard({ heading, content, link }) {
+interface Props {
+  heading: string;
+  content: string;
+  link: {
+    url: string;
+    text: string;
+  };
+}
+
+export default function TextCard({ heading, content, link }: Props) {
   return (
     <article className="text-card center">
       <div className="stack">

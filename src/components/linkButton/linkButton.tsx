@@ -1,4 +1,4 @@
-import styles from './linkButton.module.css';
+import styles from './LinkButton.module.css';
 
 export interface LinkButtonProps {
   children: string;

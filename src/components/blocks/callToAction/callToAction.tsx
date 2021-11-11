@@ -1,6 +1,14 @@
 import { gql } from '@apollo/client';
 
-export default function CallToAction({ heading, link }) {
+interface Props {
+  heading: string;
+  link: {
+    url: string;
+    text: string;
+  };
+}
+
+export default function CallToAction({ heading, link }: Props) {
   return (
     <section className="cta">
       <h2>{heading}</h2>

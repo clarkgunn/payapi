@@ -1,6 +1,11 @@
-import PropTypes from 'prop-types';
+import { Component } from 'react';
 
-export default function BlockBuilder({ blockMap, blocks }) {
+interface Props {
+  blockMap: { [index: string]: typeof Component };
+  blocks: [{ __typename: string; _key: string; [rest: string]: unknown }];
+}
+
+export default function BlockBuilder({ blockMap, blocks }: Props) {
   return (
     <>
       {blocks.map((block) => {
@@ -10,8 +15,3 @@ export default function BlockBuilder({ blockMap, blocks }) {
     </>
   );
 }
-
-BlockBuilder.propTypes = {
-  blockMap: PropTypes.objectOf(PropTypes.elementType).isRequired,
-  blocks: PropTypes.arrayOf(PropTypes.object).isRequired,
-};

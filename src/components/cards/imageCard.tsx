@@ -1,8 +1,15 @@
 import { gql } from '@apollo/client';
 import Image from 'next/image';
-import { image } from 'utils/graphql/fragments';
+import { image } from '@/graphql/fragments';
 
-export default function ImageCard({ name, image }) {
+interface Props {
+  name: string;
+  image: {
+    public_id: string;
+  };
+}
+
+export default function ImageCard({ name, image }: Props) {
   return (
     <div className={name}>
       <Image

@@ -1,11 +1,15 @@
-import './form.module.css';
+import './Form.module.css';
 
 function getElementValues(formNode: HTMLFormElement) {
   const thing = Object.getOwnPropertyNames(formNode.elements).reduce(
-    (acc, index) => {
-      return { ...acc, ...{ [index]: formNode.elements[index].value } };
+    (acc, index: any) => {
+      const element = formNode.elements[index] as HTMLInputElement;
+      return {
+        ...acc,
+        ...{ [index]: element.value },
+      };
     },
-    {}
+    {},
   );
 
   return thing;

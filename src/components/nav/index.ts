@@ -1,1 +1,2 @@
-export { default } from './nav';
+export { default } from './Nav';
+export type { INav } from './Nav';

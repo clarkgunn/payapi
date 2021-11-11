@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
-import LinkButton from './linkButton';
+import LinkButton from '@/components/LinkButton';
 
 describe('Button', () => {
   it('should render successfully.', () => {
@@ -26,7 +26,7 @@ describe('Button', () => {
         <LinkButton secondary dark>
           {secondaryDark}
         </LinkButton>
-      </section>
+      </section>,
     );
 
     const primaryButton = screen.getByText(primary);

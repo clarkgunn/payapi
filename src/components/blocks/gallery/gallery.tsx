@@ -1,8 +1,20 @@
 import { gql } from '@apollo/client';
 import Image from 'next/image';
-import { image } from 'utils/graphql/fragments';
+import { image } from '@/graphql/fragments';
 
-export default function Gallery({ name, images }) {
+interface Props {
+  name: string;
+  images: [
+    {
+      public_id: string;
+      height?: number;
+      width?: number;
+      _key: string;
+    },
+  ];
+}
+
+export default function Gallery({ name, images }: Props) {
   return (
     <section className="gallery">
       {images.map((image) => (
