@@ -1,0 +1,10 @@
+.hero {
+  display: flex;
+  direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.heroImage {
+  width: clamp(159px 20vw 263px);
+}

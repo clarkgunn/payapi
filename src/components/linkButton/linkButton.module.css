@@ -1,0 +1,45 @@
+.link-button {
+  padding: 1em 1.5em;
+  border: 1px solid currentColor;
+  border-radius: 50px;
+  min-width: 8.6rem;
+}
+
+.primary {
+  color: white;
+  background-color: var(--primary-dark);
+}
+
+.secondary--light {
+  color: white;
+  background-color: var(--mirage-blue);
+}
+
+.secondary--dark {
+  color: var(--mirage-blue);
+  background-color: white;
+}
+
+.primary:hover:not(:disabled) {
+  background-color: var(--charm-pink);
+}
+
+.secondary--light:hover:not(:disabled) {
+  color: var(--mirage-blue);
+  background-color: white;
+}
+
+.secondary--dark:hover:not(:disabled) {
+  color: white;
+  background-color: var(--san-juan-blue);
+}
+
+.primary:disabled,
+.secondary--dark:disabled {
+  opacity: 50%;
+}
+
+.secondary--light:disabled {
+  color: rgba(251, 252, 254, 0.5);
+  background-color: var(--mirage-blue);
+}

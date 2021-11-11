@@ -1,0 +1,11 @@
+.header::after {
+  content: '';
+  display: inline-block;
+  width: 140vw;
+  height: 140vw;
+  border-radius: 140rem;
+  background-color: var(--dark-blue-gray);
+  position: fixed;
+  top: -110vw;
+  left: -20%;
+}
