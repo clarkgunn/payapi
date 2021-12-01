@@ -1,61 +1,26 @@
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/26466516/118417547-e9409d00-b68a-11eb-8162-6afccf9288a9.png" alt="Next.js TypeScript Starter">
-</p>
+# Payapi
 
-<p align="center">
-  <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&style=for-the-badge&color=5e17eb&labelColor=000000" alt="PRs welcome!" />
+![Build](https://github.com/ClarkMitchell/payapi/actions/workflows/build.yml/badge.svg)
+![Tests](https://github.com/ClarkMitchell/payapi/actions/workflows/test.yml/badge.svg)
 
-  <img alt="License" src="https://img.shields.io/github/license/jpedroschmitz/typescript-nextjs-starter?style=for-the-badge&color=5e17eb&labelColor=000000">
+A Brochure site for an API SaaS company.
 
-  <a href="https://twitter.com/intent/follow?screen_name=jpedroschmitz">
-    <img src="https://img.shields.io/twitter/follow/jpedroschmitz?style=for-the-badge&color=5e17eb&labelColor=000000" alt="Follow @jpedroschmitz" />
-  </a>
-</p>
+Built as a monorepo with Next.js and Sanity CMS
 
-<br>
+## TODO
 
-A TypeScript starter for Next.js that includes all you need to build amazing projects 🔥
-
-- 📏 **ESLint** — Pluggable JavaScript linter
-- 💖 **Prettier** - Opinionated Code Formatter
-- 🐶 **Husky** — Use git hooks with ease
-- 📄 **Commitizen** - Conventional commit messages CLI
-- 🚓 **Commitlint** - Lint commit messages
-- 🖌 **Renovate** - Dependency update tool
-- 🚫 **lint-staged** - Run linters against staged git files
-- 👷 **PR Workflow** - Run Type Check & Linters on pull requests
-- 🗂 **Absolute import** - Import folders and files using the `@` prefix
-
-## 🚀 Getting started
-
-The best way to start with this template is using `create-next-app`.
-
-```
-npx create-next-app ts-next -e https://github.com/jpedroschmitz/typescript-nextjs-starter
-```
-
-If you prefer you can clone this repository and run the following commands inside the project folder:
-
-> By default, this starter uses Yarn, but this choice is yours. If you'd like to switch to npm, delete the `yarn.lock` file, install the dependencies with `npm install`, and change the CI workflows, Husky Git hooks, and lint-staged steps to use npm commands.
-
-1. `yarn`;
-2. `yarn dev`;
-
-To view the project open `http://localhost:3000`.
-
-## 🤝 Contributing
-
-1. Fork this repository;
-2. Create your branch: `git checkout -b my-new-feature`;
-3. Commit your changes: `git commit -m 'Add some feature'`;
-4. Push to the branch: `git push origin my-new-feature`.
-
-**After your pull request is merged**, you can safely delete your branch.
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for more information.
-
----
-
-Made with ♥ by João Pedro Schmitz
+- [x] Implement button component and stories.
+- [x] Investigate block instances in topmost CMS level, which can be referenced by pages.
+- [ ] Add Photos for index to CMS.
+- [ ] Configure fonts
+- [ ] Implement Form input component and stories.
+- [ ] Work on hero block with tests.
+- [ ] Set up inner and outer max-width columns
+- [ ] Logo grid component
+- [ ] Image on Side component
+- [ ] CTA form component
+- [ ] Pricing component
+- [ ] Pricing Features component
+- [ ] Pricing Table component
+- [ ] Label Text component
+- [ ] Company Stats component
