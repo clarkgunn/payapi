@@ -1,4 +1,4 @@
-import './emailForm.module.css';
+import './EmailForm.module.css';
 import Form from '@/components/Form';
 import Button from '@/components/Button';
 

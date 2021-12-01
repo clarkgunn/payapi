@@ -1,4 +1,4 @@
-import './sharedCallToAction.module.css';
+import './SharedCallToAction.module.css';
 import { gql } from '@apollo/client';
 
 interface Props {
