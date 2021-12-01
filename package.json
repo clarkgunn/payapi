@@ -23,8 +23,10 @@
   },
   "lint-staged": {
     "./src/**/*.{ts,js,jsx,tsx}": [
+      "npm run format",
+      "npm run type-check",
       "npm run lint --fix",
-      "npm run format"
+      "npm run test"
     ]
   },
   "dependencies": {

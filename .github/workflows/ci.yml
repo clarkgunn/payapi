@@ -7,7 +7,7 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    name: Run Type Check & Linters
+    name: Lint and Test
     runs-on: ubuntu-latest
 
     steps:
@@ -23,9 +23,6 @@ jobs:
 
       - name: Install dependencies (with cache)
         uses: bahmutov/npm-install@HEAD
-
-      - name: Check types
-        run: npm run type-check
 
       - name: Check linting
         run: npm run lint
