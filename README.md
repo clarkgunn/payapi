@@ -1,7 +1,6 @@
 # Payapi
 
-![Build](https://github.com/ClarkMitchell/payapi/actions/workflows/build.yml/badge.svg)
-![Tests](https://github.com/ClarkMitchell/payapi/actions/workflows/test.yml/badge.svg)
+![Build](https://github.com/ClarkMitchell/payapi/actions/workflows/ci.yml/badge.svg)
 
 A Brochure site for an API SaaS company.
 
@@ -11,7 +10,7 @@ Built as a monorepo with Next.js and Sanity CMS
 
 - [x] Implement button component and stories.
 - [x] Investigate block instances in topmost CMS level, which can be referenced by pages.
-- [ ] Add Photos for index to CMS.
+- [x] Add Photos for index to CMS.
 - [ ] Configure fonts
 - [ ] Implement Form input component and stories.
 - [ ] Work on hero block with tests.
