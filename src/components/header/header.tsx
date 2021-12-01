@@ -1,6 +1,5 @@
 import styles from './header.module.css';
 import { gql } from '@apollo/client';
-import Image from 'next/image';
 import Logo from '@/components/Logo';
 import MobileNav from '@/components/MobileNav';
 import Link from 'next/link';
@@ -17,7 +16,7 @@ export function Header({ nav = [], inverted = false }: HeaderProps) {
       className={`cluster ${styles.header} ${inverted ? 'inverted' : ''}`}
     >
       <Link href="/">
-        <a className="logo-link" aria-label="Sunnyside logo">
+        <a className="logo-link" aria-label="Pay API logo">
           <Logo height="30" width="170" />
         </a>
       </Link>
@@ -35,7 +34,7 @@ export const query = gql`
       ... on Navigation {
         inHero
         nav {
-          _key
+          _id
           pageName
           slug {
             current

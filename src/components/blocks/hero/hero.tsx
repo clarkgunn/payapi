@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import styles from './hero.module.css';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import Image from 'next/image';
 import Script from 'next/script';
 import { useContext } from 'react';

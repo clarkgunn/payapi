@@ -13,7 +13,7 @@ export function Footer({ nav }: Props) {
     <footer className="stack">
       <section className="center">
         <Link href="/">
-          <a className="logo-link" aria-label="Sunnyside logo">
+          <a className="logo-link" aria-label="Pay API logo">
             <Logo height="30" width="170" dark />
           </a>
         </Link>
@@ -30,7 +30,7 @@ export const query = gql`
       ... on Navigation {
         inHero
         nav {
-          _key
+          _id
           pageName
           slug {
             current
